@@ -224,7 +224,9 @@ function createControlPoint(posX, posY, posZ, color, controlPoints, upoints) {
   let pointMaterial = new THREE.MeshBasicMaterial({
     color: color,
     transparent: true,
-    opacity: 0.5
+    opacity: 0.5,
+    depthTest: false,
+    polygonOffset: false
   });
   let controlPoint = new THREE.Mesh( pointGeometry, pointMaterial );
   controlPoint.position.set( posX, posY, posZ );
