@@ -118,36 +118,27 @@ function init() {
   scene.add( solidLine );
 
   window.addEventListener( 'resize', onWindowResize );
-  
 }
 
-
 function onWindowResize() {
-  
   const aspect = window.innerWidth / window.innerHeight;
   camera.aspect = aspect;
   camera.updateProjectionMatrix();
   renderer.setSize( window.innerWidth, window.innerHeight );
   render();
-  
 }
             
 function animate() {
-  
   requestAnimationFrame( animate );
   controls.update();
   render();
-  
 }
 			
 function render() {
-  
   renderer.render( scene, camera );
-  
 }
 						
 function createControlPoint(posX, posY, posZ, color, controlPoints, upoints) {
-  
   let dim = 0.1;
   let pointGeometry = new THREE.BoxGeometry( dim, dim, dim );
   let pointMaterial = new THREE.MeshBasicMaterial({
@@ -162,5 +153,4 @@ function createControlPoint(posX, posY, posZ, color, controlPoints, upoints) {
   controlPoints.push( controlPoint );
   upoints.push( controlPoint.position );
   scene.add( controlPoint );
-  
 }
